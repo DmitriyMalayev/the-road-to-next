@@ -2,7 +2,7 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-
+import Link from "next/link";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -20,14 +20,39 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body>
+        <nav className="bg-gray-800 p-4">
+          <ul className="flex justify-center space-x-4">
+            <li>
+              <Link href="/" className="text-white hover:text-gray-300">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/about" className="text-white hover:text-gray-300">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link href="/tickets" className="text-white hover:text-gray-300">
+                Tickets
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/tickets/create"
+                className="text-white hover:text-gray-300"
+              >
+                Create Ticket
+              </Link>
+            </li>
+          </ul>
+        </nav>
         {children}
       </body>
     </html>
