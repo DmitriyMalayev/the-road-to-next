@@ -1,15 +1,13 @@
 import "./globals.css";
 
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import Link from "next/link";
+
+import { aboutPath, createTicketPath, homePath, ticketsPath } from "@/paths";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
@@ -24,28 +22,37 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${geistSans.className}`}>
       <body>
         <nav className="bg-gray-800 p-4">
           <ul className="flex justify-center space-x-4">
             <li>
-              <Link href="/" className="text-white hover:text-gray-300">
+              <Link
+                href={homePath()}
+                className="text-white hover:text-gray-300"
+              >
                 Home
               </Link>
             </li>
             <li>
-              <Link href="/about" className="text-white hover:text-gray-300">
+              <Link
+                href={aboutPath()}
+                className="text-white hover:text-gray-300"
+              >
                 About
               </Link>
             </li>
             <li>
-              <Link href="/tickets" className="text-white hover:text-gray-300">
+              <Link
+                href={ticketsPath()}
+                className="text-white hover:text-gray-300"
+              >
                 Tickets
               </Link>
             </li>
             <li>
               <Link
-                href="/tickets/create"
+                href={createTicketPath()}
                 className="text-white hover:text-gray-300"
               >
                 Create Ticket
