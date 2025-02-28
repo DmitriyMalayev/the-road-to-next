@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import Link from "next/link";
 
+import { buttonVariants } from "@/components/ui/button";
 import { aboutPath, createTicketPath, homePath, ticketsPath } from "@/paths";
 
 const geistSans = Geist({
@@ -29,7 +30,10 @@ export default function RootLayout({
             <li>
               <Link
                 href={homePath()}
-                className="text-white hover:text-gray-300"
+                className={buttonVariants({
+                  variant: "outline",
+                  className: "min-w-40",
+                })}
               >
                 Home
               </Link>
@@ -37,7 +41,10 @@ export default function RootLayout({
             <li>
               <Link
                 href={aboutPath()}
-                className="text-white hover:text-gray-300"
+                className={buttonVariants({
+                  variant: "outline",
+                  className: "min-w-40",
+                })}
               >
                 About
               </Link>
@@ -45,7 +52,10 @@ export default function RootLayout({
             <li>
               <Link
                 href={ticketsPath()}
-                className="text-white hover:text-gray-300"
+                className={buttonVariants({
+                  variant: "outline",
+                  className: "min-w-40",
+                })}
               >
                 Tickets
               </Link>
@@ -53,7 +63,10 @@ export default function RootLayout({
             <li>
               <Link
                 href={createTicketPath()}
-                className="text-white hover:text-gray-300"
+                className={buttonVariants({
+                  variant: "outline",
+                  className: "min-w-40",
+                })}
               >
                 Create Ticket
               </Link>
