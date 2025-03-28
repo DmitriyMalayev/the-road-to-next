@@ -1,13 +1,12 @@
-import clsx from "clsx";
 
-export const CheckIcon = ({ className }: { className?: string }) => (
+export const CheckIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"
     strokeWidth={1.5}
     stroke="currentColor"
-    className={clsx("size-6", className)}
+    className={"size-6 text-orange-300"}
   >
     <path
       strokeLinecap="round"
@@ -16,14 +15,14 @@ export const CheckIcon = ({ className }: { className?: string }) => (
     />
   </svg>
 );
-export const OpenIcon = ({ className }: { className?: string }) => (
+export const OpenIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"
     strokeWidth="1.5"
     stroke="currentColor"
-    className={clsx("size-6", className)}
+    className={"size-6 text-orange-300"}
   >
     <path
       strokeLinecap="round"
@@ -33,14 +32,14 @@ export const OpenIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-export const InProgressIcon = ({ className }: { className?: string }) => (
+export const InProgressIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"
     strokeWidth="1.5"
     stroke="currentColor"
-    className={clsx("size-6", className)}
+    className={"size-6 text-orange-300"}
   >
     <path
       strokeLinecap="round"

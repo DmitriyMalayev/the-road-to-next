@@ -63,7 +63,6 @@ export default {
           },
         },
       },
-
       animation: {
         "fade-from-top": "fade-from-top 1s ease-out",
       },

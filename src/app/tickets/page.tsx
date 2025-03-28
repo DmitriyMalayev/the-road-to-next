@@ -7,26 +7,26 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {Separator} from "@/components/ui/separator";
 import initialTickets from "@/data";
 
 import { CheckIcon, InProgressIcon, OpenIcon } from "../Icons";
-
 export const TICKET_ICONS = {
-  OPEN: <OpenIcon className="text-orange-300" />,
-  DONE: <CheckIcon className="text-orange-300" />,
-  IN_PROGRESS: <InProgressIcon className="text-orange-300" />,
+  OPEN: <OpenIcon />,
+  DONE: <CheckIcon />,
+  IN_PROGRESS: <InProgressIcon />,
 };
 
 const Tickets = () => {
   return (
-    <div className="flex flex-col mx-20 gap-y-8 p-4">
+    <div className="flex flex-col mx-20 gap-y-8 p-4 animate-fade-from-top">
       <header className="text-center">
         <h1 className="text-2xl font-bold">All Tickets</h1>
         <p className="text-muted-foreground">Here are all the tickets.</p>
       </header>
-
-      <div className="p-4 rounded-lg">
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <Separator />
+      <div className="p-4 rounded-lg ">
+        <ul className="gap-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
           {initialTickets.map((ticket) => (
             <Card
               key={ticket.id}
