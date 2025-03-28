@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import Heading from "@/components/heading";
 import {
   Card,
   CardContent,
@@ -7,7 +8,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {Separator} from "@/components/ui/separator";
 import initialTickets from "@/data";
 
 import { CheckIcon, InProgressIcon, OpenIcon } from "../Icons";
@@ -20,11 +20,7 @@ export const TICKET_ICONS = {
 const Tickets = () => {
   return (
     <div className="flex flex-col mx-20 gap-y-8 p-4 animate-fade-from-top">
-      <header className="text-center">
-        <h1 className="text-2xl font-bold">All Tickets</h1>
-        <p className="text-muted-foreground">Here are all the tickets.</p>
-      </header>
-      <Separator />
+      <Heading title="All Tickets" description="Here are all the tickets." />
       <div className="p-4 rounded-lg ">
         <ul className="gap-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
           {initialTickets.map((ticket) => (

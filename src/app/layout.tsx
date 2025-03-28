@@ -2,10 +2,9 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
-import Link from "next/link";
 
-import { buttonVariants } from "@/components/ui/button";
-import { aboutPath, createTicketPath, homePath, ticketsPath } from "@/paths";
+import Header from "@/components/header";
+import { ThemeProvider } from "@/components/theme/theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,55 +24,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.className}`}>
       <body>
-        <nav className="bg-gray-800 p-4">
-          <ul className="flex justify-center space-x-4">
-            <li>
-              <Link
-                href={homePath()}
-                className={buttonVariants({
-                  variant: "outline",
-                  className: "min-w-40",
-                })}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={aboutPath()}
-                className={buttonVariants({
-                  variant: "outline",
-                  className: "min-w-40",
-                })}
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={ticketsPath()}
-                className={buttonVariants({
-                  variant: "outline",
-                  className: "min-w-40",
-                })}
-              >
-                Tickets
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={createTicketPath()}
-                className={buttonVariants({
-                  variant: "outline",
-                  className: "min-w-40",
-                })}
-              >
-                Create Ticket
-              </Link>
-            </li>
-          </ul>
-        </nav>
-        {children}
+        <ThemeProvider>
+          <Header />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

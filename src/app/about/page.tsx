@@ -1,9 +1,7 @@
+import Heading from "@/components/heading";
+
 const About = () => {
-  return (
-    <div>
-      <h1>About</h1>
-    </div>
-  );
+  return <Heading title="About" description="Prestige Travel Time" />;
 };
 
 export default About;
