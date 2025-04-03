@@ -3,17 +3,15 @@ import Link from "next/link";
 import { aboutPath, createTicketPath, homePath, ticketsPath } from "@/paths";
 
 import { buttonVariants } from "./ui/button";
-
 const Header = () => {
   return (
-    <nav className="bg-gray-800 p-4">
-      <ul className="flex justify-center space-x-4">
+    <nav className="bg-slate-600 py-2 ">
+      <ul className="flex justify-center space-x-8 w-full">
         <li>
           <Link
             href={homePath()}
             className={buttonVariants({
               variant: "outline",
-              className: "min-w-40",
             })}
           >
             Home
@@ -24,7 +22,6 @@ const Header = () => {
             href={aboutPath()}
             className={buttonVariants({
               variant: "outline",
-              className: "min-w-40",
             })}
           >
             About
@@ -35,7 +32,6 @@ const Header = () => {
             href={ticketsPath()}
             className={buttonVariants({
               variant: "outline",
-              className: "min-w-40",
             })}
           >
             Tickets
@@ -46,7 +42,6 @@ const Header = () => {
             href={createTicketPath()}
             className={buttonVariants({
               variant: "outline",
-              className: "min-w-40",
             })}
           >
             Create Ticket

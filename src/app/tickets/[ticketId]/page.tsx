@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Placeholder } from "@/components/placeholder";
 import { Button } from "@/components/ui/button";
 import initialTickets from "@/data";
+import { TicketItem } from "@/features/ticket/components/ticket-item";
 import { ticketsPath } from "@/paths";
 
 type TicketPageProps = {
@@ -29,17 +30,13 @@ const TicketPage = async ({ params }: TicketPageProps) => {
         }
       />
     );
+  } else {
+    return (
+      <div className="flex justify-center animate-fade-from-top">
+        <TicketItem ticket={foundTicket} isDetail />
+      </div>
+    );
   }
-
-  return (
-    <div>
-      <h1>TicketPage Page</h1>
-      <h2>Ticket ID: {ticketId}</h2>
-      <h2>Title: {foundTicket.title}</h2>
-      <p>{foundTicket.content}</p>
-      <p>Status: {foundTicket.status}</p>
-    </div>
-  );
 };
 
 export default TicketPage;
