@@ -12,7 +12,12 @@ const ThemeSwitcher = () => {
   };
 
   return (
-    <Button className="w-full px-2" onClick={toggleTheme} variant="outline" size="icon">
+    <Button
+      className="w-full px-2"
+      onClick={toggleTheme}
+      variant="outline"
+      size="icon"
+    >
       {theme === "system" ? <LucideSun /> : <LucideMoon />}
       Switch Theme
     </Button>
