@@ -4,6 +4,7 @@ import Heading from "@/components/heading";
 import { ticketsPath } from "@/paths";
 
 const Homepage = () => {
+  console.log("Homepage");
   return (
     <div className="flex-1 flex flex-col gap-y-8 border items-center justify-center">
       <Heading title="Homepage" description="Welcome to your Next.js app." />
