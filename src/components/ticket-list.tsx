@@ -1,8 +1,8 @@
-import { getTickets } from "@/features/queries/get-tickets";
 import { TicketItem } from "@/features/ticket/components/ticket-item";
+import { prisma } from "@/lib/prisma";
 
 const TicketList = async () => {
-  const tickets = await getTickets();
+  const tickets = await prisma.ticket.findMany();
   console.log("TicketList");
   return (
     <div className="p-4 rounded-lg">
